@@ -35,7 +35,7 @@
                     'post_per_page' => 3
                 );
 
-                $posts get_posts($args);
+                $posts = get_posts($args);
                 foreach ($posts as $post):
                     setup_postdata($post);
                 ?>
