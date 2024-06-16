@@ -81,40 +81,20 @@
 <div class="news">
   <div class="footer_row">
     <div class="row news_row">
+
       <!-- ニュース -->
-      <div class="col-lg-6 col-md-6 col-sx-12 news_col">
+      
+            <div class="news_post_small_title">
+              <a href="<?php the_permalink(); ?>">
+                <?php the_title(); ?>
+              </a>
+            </div>
+          </div>
+
+        <?php endforeach; ?>
+        <?php wp_reset_postdata(); ?><div class="col-lg-6 col-md-6 col-sx-12 news_col">
         <div class="home_title">News</div>
         <div class="home_title_sub">ニュース</div>
-        <!-- <div class="news_post_small">
-              <div class="news_post_meta">
-                <ul>
-                  <li><a href="news_detail.html">2022/05/02</a></li>
-                </ul>
-              </div>
-              <div class="news_post_small_title">
-                <a href="news_detail.html">公開講座「UnityでつくるiOSアプリ」受講生募集</a>
-              </div>
-            </div>
-            <div class="news_post_small">
-              <div class="news_post_meta">
-                <ul>
-                  <li><a href="news_detail.html">2022/05/02</a></li>
-                </ul>
-              </div>
-              <div class="news_post_small_title">
-                <a href="news_detail.html">新規カリキュラム「Pythonコース」登場!</a>
-              </div>
-            </div>
-            <div class="news_post_small">
-              <div class="news_post_meta">
-                <ul>
-                  <li><a href="news_detail.html">2022/05/02</a></li>
-                </ul>
-              </div>
-              <div class="news_post_small_title">
-                <a href="news_detail.html">新規カリキュラム「Pythonコース」登場!</a>
-              </div>
-            </div> -->
 
         <?php
         $args = array(
@@ -122,19 +102,7 @@
           'category_name' => 'news',
           'posts_per_page' => 3,
         );
-
         $posts = get_posts($args);
-        // foreach($posts as $post):
-        //   setup_postdata($post);
-        //   echo get_permalink();
-        //   echo "<br/>";
-        //   echo get_the_date();
-        //   echo "<br/>";
-        //   the_title();
-        //   echo "<br/><br/>";
-        // endforeach;
-
-        //   wp_reset_postdata();
         ?>
 
         <?php foreach ($posts as $post) : ?>
@@ -149,69 +117,11 @@
                 </li>
               </ul>
             </div>
-            <div class="news_post_small_title">
-              <a href="<?php the_permalink(); ?>">
-                <?php the_title(); ?>
-              </a>
-            </div>
-          </div>
-
-        <?php endforeach; ?>
-        <?php wp_reset_postdata(); ?>
 
       </div>
       <!-- ニュースここまで -->
 
       <!-- イベント -->
-      <!-- <div class="col-lg-6 col-md-6 col-sx-12 news_col">
-        <div class="home_title">Event</div>
-        <div class="home_title_sub">イベント</div>
-        <div class="news_post_small">
-          <div class="row news_post_row">
-            <div class="col-lg-3 col-md-4 col-sx-12">
-              <div class="calendar_border">
-                <div class="calendar_border_1">
-                  <div class="calendar_month">OCT</div>
-                  <div class="calendar_day">
-                    <span>8</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-9 col-md-8 col-sx-12">
-              <div class="news_post_small_title">
-                <a href="events_detail.html">AWSハンズオンセミナー</a>
-              </div>
-              <div class="news_post_content">
-                10月8日　新宿〇〇ビル8Fにて、AWSハンズオンセミナーを開催します。AWSを実際に構築してみます。参加希望者は...
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="news_post_small">
-          <div class="row news_post_row">
-            <div class="col-lg-3 col-md-4 col-sx-12">
-              <div class="calendar_border">
-                <div class="calendar_border_1">
-                  <div class="calendar_month">OCT</div>
-                  <div class="calendar_day">
-                    <span>15</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-9 col-md-8 col-sx-12">
-              <div class="news_post_small_title">
-                <a href="events_detail.html">Raspberry Piハンズオンセミナー</a>
-              </div>
-              <div class="news_post_content">
-                11月15日　新宿〇〇ビル8Fにて、Raspberry
-                Piを使った、センサーを利用した自動走行ハンズオンセミナーを開催し...
-              </div>
-            </div>
-          </div>
-        </div> -->
-
       <?php
       $args = array(
         'post_type' => 'post',

@@ -7,14 +7,12 @@
         </div>
         <div class="sidebar_categories">
             <ul>
-                <!-- <li><a href="#">News ニュース</a></li>
-                <li><a href="#">Event イベント</a></li>
-                <li><a href="#">CampusLife 侍の学生</a></li> -->
                 <?php
                 $args = array(
                     'hide_empty' => 1,
                     'title_li' => '',
                 );
+                wp_list_categories($args);
                 ?>
 
             </ul>
@@ -27,24 +25,21 @@
         </div>
         <div class="sidebar_categories">
             <ul>
-                <!-- <li><a href="#">AWS ハンズオンセミ…</a></li>
-                <li><a href="#">AWS ハンズオンセミ…</a></li>
-                <li><a href="#">AWS ハンズオンセミ…</a></li> -->
                 <?php
                 $args = array(
                     'post_per_page' => 3
                 );
 
                 $posts = get_posts($args);
-                foreach ($posts as $post):
+                foreach ($posts as $post) :
                     setup_postdata($post);
                 ?>
 
-                <li>
-                    <a href="<?php the_permalink(); ?>">
-                        <?php the_title(); ?>
-                    </a>
-                </li>
+                    <li>
+                        <a href="<?php the_permalink(); ?>">
+                            <?php the_title(); ?>
+                        </a>
+                    </li>
 
                 <?php
                 endforeach;
