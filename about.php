@@ -7,12 +7,7 @@
     <div class="image_header">
       <div class="header_info">
         <!-- titleを出力します -->
-        <!-- <div>about us</div> -->
-        <div>
-
-          <?php the_title(); ?>
-
-        </div>
+        <div><?php the_title(); ?></div>
       </div>
     </div>
   </div>
@@ -32,12 +27,8 @@
             <div class="tab_panels">
               <!-- Description -->
               <div class="tab_panel">
-                <div class="tab_panel_title">
-                  <?php the_title(); ?>
-                </div>
-
+                <div class="tab_panel_title"><?php the_title(); ?></div>
                 <?php the_content(); ?>
-
               </div>
             </div>
           </div>
