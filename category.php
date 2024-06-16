@@ -125,5 +125,5 @@
   </div>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer(); ?>b
 <!-- footer.php ここまで -->
