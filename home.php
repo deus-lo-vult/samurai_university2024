@@ -83,16 +83,7 @@
     <div class="row news_row">
 
       <!-- ニュース -->
-      
-            <div class="news_post_small_title">
-              <a href="<?php the_permalink(); ?>">
-                <?php the_title(); ?>
-              </a>
-            </div>
-          </div>
-
-        <?php endforeach; ?>
-        <?php wp_reset_postdata(); ?><div class="col-lg-6 col-md-6 col-sx-12 news_col">
+      <div class="col-lg-6 col-md-6 col-sx-12 news_col">
         <div class="home_title">News</div>
         <div class="home_title_sub">ニュース</div>
 
@@ -117,11 +108,21 @@
                 </li>
               </ul>
             </div>
+            <div class="news_post_small_title">
+              <a href="<?php the_permalink(); ?>">
+                <?php the_title(); ?>
+              </a>
+            </div>
+          </div>
+
+        <?php endforeach; ?>
+        <?php wp_reset_postdata(); ?>
 
       </div>
       <!-- ニュースここまで -->
 
       <!-- イベント -->
+
       <?php
       $args = array(
         'post_type' => 'post',
@@ -133,7 +134,6 @@
 
       <?php foreach ($posts as $post) : ?>
         <?php setup_postdata($post); ?>
-
         <div class="news_post_small">
           <div class="row news_post_row">
             <div class="col-lg-3 col-md-4 col-sx-12">
