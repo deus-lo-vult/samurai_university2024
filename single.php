@@ -1,10 +1,3 @@
-<?php
-/*
-Template Name: イベント投稿ページ
-Template Post Type: post
-*/
-?>
-
 <?php get_header(); ?>
 
 <?php if (have_posts()) : ?>
@@ -49,11 +42,11 @@ Template Post Type: post
                           <div class="calendar_news_border">
                             <div class="calendar_news_border_1">
                               <div class="calendar_month">
-                                <?php echo post_custom('month'); ?>
+                                <?php echo get_post_time('F'); ?>
                               </div>
                               <div class="calendar_day">
                                 <span>
-                                  <?php echo post_custom('day'); ?>
+                                  <?php echo get_the_date('d'); ?>
                                 </span>
                                 <span>
                                   日
@@ -72,26 +65,6 @@ Template Post Type: post
                           </div>
                           <div class="news_detail_title">
                             <?php the_title(); ?>
-                          </div>
-                          <div class="news_time">
-                            <div>
-                              <img src="<?php echo get_template_directory_uri(); ?>/images/clock-regular.png" alt="" />
-                              <span>
-                                日付:<?php post_custom('date'); ?>
-                              </span>
-                            </div>
-                            <div>
-                              <img src="<?php echo get_template_directory_uri(); ?>/images/yen-sign-solid.png" alt="" />
-                              <span>
-                                参加費:<?php
-                                    if (post_custom('fee') == 0) {
-                                      echo '無料';
-                                    } else {
-                                      echo '¥' . number_format(post_custom('fee'));
-                                    }
-                                    ?>
-                              </span>
-                            </div>
                           </div>
                           <div class="news_post_meta">
                             <?php the_content(); ?>
