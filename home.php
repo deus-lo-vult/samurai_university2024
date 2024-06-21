@@ -122,62 +122,65 @@
       <!-- ニュースここまで -->
 
       <!-- イベント -->
-      <?php
-      $args = array(
-        'post_type' => 'post',
-        'category_name' => 'event',
-        'posts_per_page' => '2',
-      );
-      $posts = get_posts($args);
-      ?>
+      <div class="col-lg-6 col-md-6 col-sx-12 news_col">
+        <div class="home_title">Event</div>
+        <div class="home_title_sub">イベント</div>
+        <?php
+        $args = array(
+          'post_type' => 'post',
+          'category_name' => 'event',
+          'posts_per_page' => '2',
+        );
+        $posts = get_posts($args);
+        ?>
 
-      <?php foreach ($posts as $post) : ?>
-        <?php setup_postdata($post); ?>
-        <div class="news_post_small">
-          <div class="row news_post_row">
-            <div class="col-lg-3 col-md-4 col-sx-12">
-              <div class="calendar_border">
-                <div class="calendar_border_1">
-                  <div class="calendar_month">
-                    <?php echo post_custom('month'); ?>
-                  </div>
-                  <div class="calendar_day">
-                    <span>
-                      <?php echo post_custom('date'); ?>
-                    </span>
+        <?php foreach ($posts as $post) : ?>
+          <?php setup_postdata($post); ?>
+          <div class="news_post_small">
+            <div class="row news_post_row">
+              <div class="col-lg-3 col-md-4 col-sx-12">
+                <div class="calendar_border">
+                  <div class="calendar_border_1">
+                    <div class="calendar_month">
+                      <?php echo post_custom('month'); ?>
+                    </div>
+                    <div class="calendar_day">
+                      <span>
+                        <?php echo post_custom('day'); ?>
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-9 col-md-8 col-sx-12">
-              <div class="news_post_small_title">
-                <a href="<?php the_permalink(); ?>">
-                  <?php the_title(); ?>
-                </a>
-              </div>
-              <div class="news_post_content">
+              <div class="col-lg-9 col-md-8 col-sx-12">
+                <div class="news_post_small_title">
+                  <a href="<?php the_permalink(); ?>">
+                    <?php the_title(); ?>
+                  </a>
+                </div>
+                <div class="news_post_content">
 
-                <?php
-                $content = wp_trim_words(
-                  get_the_content(),
-                  50,
-                  '...'
-                );
-                echo $content;
-                ?>
+                  <?php
+                  $content = wp_trim_words(
+                    get_the_content(),
+                    50,
+                    '...'
+                  );
+                  echo $content;
+                  ?>
 
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-      <?php endforeach; ?>
-      <?php wp_reset_postdata(); ?>
+        <?php endforeach; ?>
+        <?php wp_reset_postdata(); ?>
 
+      </div>
+      <!-- イベントここまで -->
     </div>
-    <!-- イベントここまで -->
   </div>
-</div>
 </div>
 <!-- ニュースとイベントここまで -->
 

@@ -1,24 +1,23 @@
 <?php get_header(); ?>
-<!-- Home -->
 
+<!-- Home -->
 <div class="home">
   <div class="breadcrumbs_container">
     <div class="image_header">
       <div class="header_info">
-        <!-- <div>news</div>
-        <div>ニュース</div> -->
         <?php
         $cat = get_the_category();
         $catslug = $cat[0]->slug;
         $catname = $cat[0]->cat_name;
         ?>
+        <div><?php echo $catslug; ?></div>
+        <div><?php echo $catname; ?></div>
       </div>
     </div>
   </div>
 </div>
 
 <!-- Course -->
-
 <div class="course">
   <div class="row content-body">
     <!-- Course -->
@@ -36,14 +35,12 @@
                 <!-- news loop from here-->
                 <?php if (have_posts()) : ?>
                   <?php while (have_posts()) : the_post(); ?>
-
                     <div class="news_posts_small">
                       <div class="row">
                         <div class="col-lg-2 col-md-2 col-sx-12">
                           <div class="calendar_news_border">
                             <div class="calendar_news_border_1">
                               <div class="calendar_month">
-
                                 <?php
                                 if (is_category('event')) :
                                   echo post_custom('month');
@@ -51,11 +48,9 @@
                                   echo get_post_time('F');
                                 endif;
                                 ?>
-
                               </div>
                               <div class="calendar_day">
                                 <span>
-
                                   <?php
                                   if (is_category('event')) :
                                     echo post_custom('day');
@@ -63,7 +58,6 @@
                                     echo get_the_date('d');
                                   endif;
                                   ?>
-
                                 </span>
                               </div>
                             </div>
@@ -97,7 +91,6 @@
                       </div>
                       <hr />
                     </div>
-
                   <?php endwhile; ?>
                 <?php endif; ?>
 

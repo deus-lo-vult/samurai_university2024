@@ -22,8 +22,8 @@
           <nav class="navbar navbar-expand-lg">
             <div class="logo_container">
               <div class="logo_text">
-                <a href="index.html">
-                  <img src="images/logo_big.png" />
+                <a href="<? echo esc_url(home_url('/')); ?>">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/logo_big.png" />
                   <span>Samurai University</span>
                 </a>
               </div>
